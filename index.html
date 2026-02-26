@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiyan Salim Mahmud – Researcher in Explainable AI</title>
+  <meta name="description" content="PhD Candidate at ELTE Budapest. Research in explainable AI, unsupervised anomaly detection, graph-based learning, and language-based reasoning.">
+  <style>
+    :root {
+      --blue:    #1F4E79;
+      --blue-lt: #2E75B6;
+      --accent:  #C55A11;
+      --bg:      #F8F9FA;
+      --white:   #FFFFFF;
+      --text:    #212529;
+      --muted:   #6C757D;
+      --border:  #DEE2E6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; color: var(--text); background: var(--bg); line-height: 1.6; }
+
+    /* NAV */
+    nav {
+      background: var(--blue);
+      padding: 0 2rem;
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .name { color: white; font-weight: 700; font-size: 1.1rem; padding: 1rem 0; }
+    nav ul { list-style: none; display: flex; gap: 0.5rem; }
+    nav ul li a {
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 1rem 0.75rem; display: block; font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: white; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-lt) 100%);
+      color: white; padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero .role { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.2rem; }
+    .hero .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+    .hero .tags span {
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.88rem;
+    }
+    .hero .links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero .links a {
+      background: white; color: var(--blue);
+      padding: 0.5rem 1.3rem; border-radius: 6px;
+      text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .hero .links a:hover { opacity: 0.85; }
+    .hero .links a.outline {
+      background: transparent; color: white;
+      border: 2px solid rgba(255,255,255,0.7);
+    }
+
+    /* LAYOUT */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+    h2 { font-size: 1.5rem; color: var(--blue); margin-bottom: 1.2rem; padding-bottom: 0.4rem; border-bottom: 3px solid var(--blue-lt); display: inline-block; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-grid p { color: var(--text); }
+    .info-list { list-style: none; }
+    .info-list li { padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .info-list li strong { color: var(--blue); margin-right: 0.5rem; }
+
+    /* GRANTS */
+    .grant-card {
+      background: white; border-left: 4px solid var(--blue);
+      padding: 1rem 1.2rem; margin-bottom: 1rem;
+      border-radius: 0 6px 6px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .grant-card h3 { font-size: 1rem; color: var(--blue); margin-bottom: 0.2rem; }
+    .grant-card .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .grant-card p { font-size: 0.93rem; }
+    .badge {
+      display: inline-block; font-size: 0.75rem; font-weight: 600;
+      padding: 0.15rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+    }
+    .badge-pi { background: #D4EDDA; color: #155724; }
+    .badge-lead { background: #CCE5FF; color: #004085; }
+    .badge-scholar { background: #FFF3CD; color: #856404; }
+
+    /* PUBLICATIONS */
+    .pub-entry {
+      background: white; padding: 1rem 1.2rem;
+      border-radius: 6px; margin-bottom: 0.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--border);
+    }
+    .pub-entry.flagship { border-left-color: var(--accent); }
+    .pub-entry.nlp { border-left-color: var(--blue-lt); }
+    .pub-entry .year { font-size: 0.8rem; font-weight: 700; color: var(--blue); text-transform: uppercase; margin-bottom: 0.2rem; }
+    .pub-entry .title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .pub-entry .authors { font-size: 0.87rem; color: var(--muted); margin-bottom: 0.2rem; }
+    .pub-entry .venue { font-size: 0.87rem; color: var(--accent); font-style: italic; }
+    .pub-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.1rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;
+      background: #FDE8D8; color: #8B3A0F;
+    }
+
+    /* REPOS */
+    .repo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .repo-card {
+      background: white; padding: 1.2rem;
+      border-radius: 8px; border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      text-decoration: none; color: inherit;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: block;
+    }
+    .repo-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); transform: translateY(-2px); }
+    .repo-card h3 { color: var(--blue-lt); font-size: 1rem; margin-bottom: 0.4rem; }
+    .repo-card p { font-size: 0.88rem; color: var(--muted); }
+    .repo-card .lang { font-size: 0.78rem; color: var(--muted); margin-top: 0.6rem; }
+    .repo-card .lang span { background: var(--bg); padding: 0.15rem 0.5rem; border-radius: 4px; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    .skill-group { background: white; padding: 1rem 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .skill-group h3 { font-size: 0.9rem; color: var(--blue); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .skill-tags span { background: var(--bg); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.82rem; }
+
+    /* FOOTER */
+    footer { background: var(--blue); color: rgba(255,255,255,0.8); text-align: center; padding: 1.5rem; font-size: 0.88rem; }
+    footer a { color: rgba(255,255,255,0.9); }
+
+    @media (max-width: 640px) {
+      .about-grid, .repo-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="name">Jiyan Salim Mahmud</span>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#grants">Grants</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Jiyan Salim Mahmud</h1>
+  <p class="role">PhD Candidate · Eötvös Loránd University (ELTE), Budapest</p>
+  <div class="tags">
+    <span>Explainable AI</span>
+    <span>Anomaly Detection</span>
+    <span>Graph Neural Networks</span>
+    <span>Language-Based Reasoning</span>
+    <span>User-Centered XAI</span>
+  </div>
+  <div class="links">
+    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">📄 Google Scholar</a>
+    <a href="https://github.com/jiyansalim" target="_blank" class="outline">💻 GitHub</a>
+    <a href="mailto:jiyan@inf.elte.hu" class="outline">✉ Contact</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-grid">
+      <div>
+        <p style="margin-bottom:1rem;">
+          I am a PhD candidate in Computer Science at Eötvös Loránd University (ELTE), specializing in
+          <strong>explainable AI (XAI)</strong>, <strong>unsupervised anomaly detection</strong>, and
+          <strong>graph-based learning</strong>.
+        </p>
+        <p style="margin-bottom:1rem;">
+          My research addresses two fundamental problems: how to <em>detect</em> anomalies without labeled data,
+          and how to <em>explain</em> those detections to domain experts in real time. I develop both novel
+          evaluation metrics (see ASOI) and user-facing explainability systems.
+        </p>
+        <p>
+          I am Principal Investigator on two industry-funded projects with
+          <strong>Deutsche Telekom Innovation Laboratories</strong>, and hold an
+          <strong>EKOP Research Scholarship</strong> from ELTE. My active research agenda is
+          expanding toward language-based anomaly reasoning and log modeling.
+        </p>
+      </div>
+      <div>
+        <ul class="info-list">
+          <li><strong>Position:</strong> PhD Candidate (defense 2026)</li>
+          <li><strong>Institution:</strong> ELTE, Faculty of Informatics</li>
+          <li><strong>Department:</strong> Data Science & Engineering</li>
+          <li><strong>Scholarship:</strong> Stipendium Hungaricum</li>
+          <li><strong>Industry:</strong> Deutsche Telekom T-Labs (PI, 2021–)</li>
+          <li><strong>Location:</strong> Budapest, Hungary</li>
+          <li><strong>Open to:</strong> Relocation for postdoc positions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRANTS -->
+  <section id="grants">
+    <h2>Research Funding</h2>
+
+    <div class="grant-card">
+      <h3>Explainable AI for Cross-Layer Anomaly & Root Cause Detection <span class="badge badge-pi">PI</span></h3>
+      <div class="meta">Deutsche Telekom TV Technique Team · Industry Grant · Oct 2025 – Present</div>
+      <p>Real-time anomaly detection with SHAP-based explainability dashboards; cross-layer root cause attribution across distributed CDN and KPI infrastructure.</p>
+    </div>
+
+    <div class="grant-card">
+      <h3>Green Orchestration & Energy-Aware CDN Resource Allocation <span class="badge badge-lead">Technical Lead</span></h3>
+      <div class="meta">Deutsche Telekom TV Technique · Industry Grant · 2025 – Present</div>
+      <p>Energy-aware orchestration strategies for large-scale distributed CDN systems.</p>
+    </div>
+
+    <div class="grant-card">
+      <h3>EKOP Research Scholarship – Independent Fundamental Research <span class="badge badge-scholar">University Grant</span></h3>
+      <div class="meta">Eötvös Loránd University · 2025 – 2026</div>
+      <p>Global model-agnostic explainable AI framework for anomaly detection. Resulted in the ASOI metric publication (Complex & Intelligent Systems, Springer 2025).</p>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <p style="margin-bottom:1.2rem; color:var(--muted); font-size:0.9rem;">
+      Full list on <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a>.
+      Industry project details are subject to confidentiality agreements with Deutsche Telekom.
+    </p>
+
+    <div class="pub-entry flagship">
+      <div class="year">Journal · 2025 <span class="pub-tag">Flagship</span></div>
+      <div class="title">ASOI: Anomaly Separation and Overlap Index — an internal evaluation metric for unsupervised anomaly detection</div>
+      <div class="authors">Mahmud, J., Farou, Z., & Lendák, I.</div>
+      <div class="venue">Complex & Intelligent Systems, Springer</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="year">Journal · Under Review</div>
+      <div class="title">Novel global model-agnostic anomaly detection framework</div>
+      <div class="authors">Mahmud, J. et al.</div>
+      <div class="venue">Results in Engineering</div>
+    </div>
+
+    <div class="pub-entry nlp">
+      <div class="year">Conference · 2025 <span class="pub-tag" style="background:#D4E6F1;color:#1A5276;">NLP-adjacent</span></div>
+      <div class="title">Temporal Harmonization of Heterogeneous Software Logs: A Unified Model for Time-Series Analysis</div>
+      <div class="authors">Abdullah, M., Hnětyňka, P., & Mahmud, J.S.</div>
+      <div class="venue">European Conference on Software Architecture (ECSA), Springer</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="year">Conference · 2025</div>
+      <div class="title">A Dual-Stage Anomaly Detection Framework: Self-Organizing Maps with KNN Refinement</div>
+      <div class="authors">Jendoubi, B. & Mahmud, J.S.</div>
+      <div class="venue">IEEE SISY 2025</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="year">Conference · 2025</div>
+      <div class="title">How BBR Improves the Quality of Live TV Streaming Experience</div>
+      <div class="authors">Mahmud, J.S., Jursonovics, T., & Lendák, I.</div>
+      <div class="venue">IEEE SAMI 2025</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="year">Conference · 2024</div>
+      <div class="title">Evaluating Unsupervised Anomaly Detection in Industrial Systems Using Silhouette Coefficient</div>
+      <div class="authors">Mahmud, J.S., Youssef, A., & Lendák, I.</div>
+      <div class="venue">ICRIC, Springer</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="year">Conference · 2024</div>
+      <div class="title">Enhancing One-Class Anomaly Detection Through Unsupervised Data Refinement</div>
+      <div class="authors">Mahmud, J.S. & Lendák, I.</div>
+      <div class="venue">IEEE SISY 2024</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="year">Conference · 2023</div>
+      <div class="title">A Semi-Supervised Framework for Anomaly Detection and Labeling for ICS</div>
+      <div class="authors">Mahmud, J.S., Birihanu, E., & Lendák, I.</div>
+      <div class="venue">CITIA, Springer</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="year">Conference · 2023</div>
+      <div class="title">Anomaly Detection in Power Consumption: A Multi-technique Approach</div>
+      <div class="authors">Hrimech, A. & Mahmud, J.S.</div>
+      <div class="venue">ICRIC, Springer</div>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:var(--muted);">
+      <strong>In preparation:</strong> Self-Explainable Transformers · Graph-Based XAI · WindowLIME · LLM-Based Anomaly Detection & Forecasting
+    </p>
+  </section>
+
+  <!-- CODE -->
+  <section id="code">
+    <h2>Code & Demos</h2>
+    <p style="margin-bottom:1rem; color:var(--muted); font-size:0.9rem;">
+      Industry project code is confidential. These repositories contain open implementations and anonymized demos.
+    </p>
+    <div class="repo-grid">
+      <a class="repo-card" href="https://github.com/jiyansalim/asoi-metric" target="_blank">
+        <h3>📊 asoi-metric</h3>
+        <p>Internal evaluation metric for unsupervised anomaly detection. Label-free, model-agnostic. Published in Complex & Intelligent Systems 2025.</p>
+        <div class="lang"><span>Python</span> <span>MIT License</span></div>
+      </a>
+      <a class="repo-card" href="https://github.com/jiyansalim/xai-anomaly-dashboard" target="_blank">
+        <h3>🔍 xai-anomaly-dashboard</h3>
+        <p>Real-time anomaly detection with SHAP-based user-facing explanations. Anonymized demo with synthetic data.</p>
+        <div class="lang"><span>Python</span> <span>Dash / Plotly</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>XAI Methods</h3>
+        <div class="skill-tags">
+          <span>SHAP</span><span>LIME</span><span>WindowLIME</span>
+          <span>Self-Explainable Models</span><span>Graph Interpretability</span>
+          <span>Attention Visualization</span><span>Counterfactuals</span>
+          <span>Simulatability Studies</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>ML & Deep Learning</h3>
+        <div class="skill-tags">
+          <span>Unsupervised Learning</span><span>GNNs</span><span>Transformers</span>
+          <span>Reinforcement Learning</span><span>KAN</span>
+          <span>Ensemble Methods</span><span>PyTorch</span><span>Scikit-learn</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>NLP & Language</h3>
+        <div class="skill-tags">
+          <span>Log Modeling</span><span>LLM-Based Detection</span>
+          <span>Mixture-of-Experts</span><span>Text Classification</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Systems & Infrastructure</h3>
+        <div class="skill-tags">
+          <span>Python</span><span>Docker</span><span>Kafka</span>
+          <span>Elasticsearch</span><span>Grafana</span><span>InfluxDB</span>
+          <span>Linux</span><span>Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="margin-bottom:0.5rem;">I am actively seeking postdoctoral positions in explainable AI, NLP, and human-centered AI systems.</p>
+    <ul class="info-list" style="max-width:400px;">
+      <li><strong>Email:</strong> jiyan@inf.elte.hu</li>
+      <li><strong>Location:</strong> Budapest, Hungary (open to relocation)</li>
+      <li><strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/jiyansalim">github.com/jiyansalim</a></li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <p>Jiyan Salim Mahmud · PhD Candidate, Eötvös Loránd University (ELTE) · Budapest, Hungary</p>
+  <p style="margin-top:0.3rem; font-size:0.8rem; opacity:0.7;">Research website · Last updated 2026</p>
+</footer>
+
+</body>
+</html>

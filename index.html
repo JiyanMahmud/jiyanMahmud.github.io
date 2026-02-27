@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jiyan Salim Mahmud – Researcher in Explainable AI</title>
   <meta name="description" content="PhD Candidate at ELTE Budapest. Research in explainable AI, unsupervised anomaly detection, graph-based learning, and language-based reasoning.">
+
   <style>
     :root {
       --blue:    #1F4E79;
@@ -41,25 +42,36 @@
       color: white; padding: 4rem 2rem 3rem;
       text-align: center;
     }
-    .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .hero .role { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.2rem; }
-    .hero .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .hero .role { font-size: 1.05rem; opacity: 0.92; margin-bottom: 0.8rem; }
+    .hero .subrole { font-size: 0.98rem; opacity: 0.90; margin-bottom: 1.2rem; }
+    .hero .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.3rem; }
     .hero .tags span {
       background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
       padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.88rem;
+      white-space: nowrap;
     }
-    .hero .links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* HERO LINKS (aligned) */
+    .hero .links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; align-items: center; }
     .hero .links a {
+      display: inline-flex; align-items: center; gap: 0.5rem;
       background: white; color: var(--blue);
-      padding: 0.5rem 1.3rem; border-radius: 6px;
-      text-decoration: none; font-weight: 600; font-size: 0.9rem;
-      transition: opacity 0.2s;
+      padding: 0.55rem 1.05rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.92rem;
+      transition: opacity 0.2s, transform 0.2s;
     }
-    .hero .links a:hover { opacity: 0.85; }
+    .hero .links a:hover { opacity: 0.9; transform: translateY(-1px); }
     .hero .links a.outline {
       background: transparent; color: white;
       border: 2px solid rgba(255,255,255,0.7);
     }
+    .hero .links a.icon-only {
+      padding: 0.55rem 0.75rem;
+      justify-content: center;
+      min-width: 44px;
+    }
+    .hero .links svg { width: 18px; height: 18px; display: block; }
 
     /* LAYOUT */
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
@@ -140,11 +152,12 @@
 
     @media (max-width: 640px) {
       .about-grid, .repo-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 1.9rem; }
       nav ul { display: none; }
     }
   </style>
 </head>
+
 <body>
 
 <nav>
@@ -154,6 +167,7 @@
     <li><a href="#grants">Grants</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#code">Code</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -161,18 +175,40 @@
 <!-- HERO -->
 <div class="hero">
   <h1>Jiyan Salim Mahmud</h1>
-  <p class="role">PhD Candidate · Eötvös Loránd University (ELTE), Budapest</p>
+  <p class="role"><strong>PhD Candidate in Data Science</strong> · Eötvös Loránd University (ELTE), Budapest</p>
+  <p class="subrole">Data Science & Engineering Department (DSD) · Explainable AI · Unsupervised Anomaly Detection</p>
+
   <div class="tags">
     <span>Explainable AI</span>
-    <span>Anomaly Detection</span>
-    <span>Graph Neural Networks</span>
+    <span>Unsupervised Anomaly Detection</span>
+    <span>Graph-Based Learning</span>
     <span>Language-Based Reasoning</span>
-    <span>User-Centered XAI</span>
   </div>
+
   <div class="links">
-    <a href="https://scholar.google.com/citations?hl=en&user=pP-ROH0AAAAJ" target="_blank">📄 Google Scholar</a>
-    <a href="https://github.com/jiyanMahmud" target="_blank" class="outline">💻 GitHub</a>
-   <a href="mailto:jiyan@inf.elte.hu" class="outline" target="_blank" rel="noopener">✉ Contact</a>
+    <a href="https://scholar.google.com/citations?user=pP-ROH0AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
+      📄 Google Scholar
+    </a>
+
+    <a href="https://jiyanMahmud.github.io" target="_blank" rel="noopener">
+      🌐 Research Website
+    </a>
+
+    <a href="https://github.com/jiyanMahmud" target="_blank" rel="noopener" class="outline">
+      💻 GitHub
+    </a>
+
+    <!-- LinkedIn icon button -->
+    <a href="https://www.linkedin.com/in/jiyan-mahmud/" target="_blank" rel="noopener" class="outline icon-only" aria-label="LinkedIn">
+      <!-- SimpleIcons LinkedIn (inline SVG) -->
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.814 20.452H3.86V9h2.954v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+
+    <a href="mailto:jiyan@inf.elte.hu" class="outline">
+      ✉ Contact
+    </a>
   </div>
 </div>
 
@@ -184,20 +220,17 @@
     <div class="about-grid">
       <div>
         <p style="margin-bottom:1rem;">
-          I am a PhD candidate in Computer Science at Eötvös Loránd University (ELTE), specializing in
-          <strong>explainable AI (XAI)</strong>, <strong>unsupervised anomaly detection</strong>, and
-          <strong>graph-based learning</strong>.
+          I work on <strong>explainable</strong> and <strong>unsupervised anomaly detection</strong>, with a focus on
+          evaluation frameworks, graph-based root cause attribution, and user-facing explainability systems.
         </p>
         <p style="margin-bottom:1rem;">
-          My research addresses two fundamental problems: how to <em>detect</em> anomalies without labeled data,
-          and how to <em>explain</em> those detections to domain experts in real time. I develop both novel
-          evaluation metrics (see ASOI) and user-facing explainability systems.
+          My current research directions include <strong>graph-based anomaly propagation</strong>,
+          <strong>language-based anomaly reasoning</strong> and log modeling, and <strong>real-time XAI dashboards</strong>
+          for operational decision support.
         </p>
         <p>
-          I am Principal Investigator on two industry-funded projects with
-          <strong>Deutsche Telekom Innovation Laboratories</strong>, and hold an
-          <strong>EKOP Research Scholarship</strong> from ELTE. My active research agenda is
-          expanding toward language-based anomaly reasoning and log modeling.
+          I collaborate on multiple industry-funded projects with <strong>Deutsche Telekom Innovation Laboratories</strong>
+          in partnership with ELTE.
         </p>
       </div>
       <div>
@@ -205,10 +238,10 @@
           <li><strong>Position:</strong> PhD Candidate (defense 2026)</li>
           <li><strong>Institution:</strong> ELTE, Faculty of Informatics</li>
           <li><strong>Department:</strong> Data Science & Engineering</li>
-          <li><strong>Scholarship:</strong> Stipendium Hungaricum</li>
-          <li><strong>Industry:</strong> Deutsche Telekom T-Labs (PI, 2021–)</li>
           <li><strong>Location:</strong> Budapest, Hungary</li>
-          <li><strong>Open to:</strong> Relocation for postdoc positions</li>
+          <li><strong>Open to:</strong> Postdoc opportunities (relocation)</li>
+          <li><strong>Email:</strong> <a href="mailto:jiyan@inf.elte.hu">jiyan@inf.elte.hu</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jiyan-mahmud/" target="_blank" rel="noopener">jiyan-mahmud</a></li>
         </ul>
       </div>
     </div>
@@ -221,7 +254,7 @@
     <div class="grant-card">
       <h3>Explainable AI for Cross-Layer Anomaly & Root Cause Detection <span class="badge badge-pi">PI</span></h3>
       <div class="meta">Deutsche Telekom TV Technique Team · Industry Grant · Oct 2025 – Present</div>
-      <p>Real-time anomaly detection with SHAP-based explainability dashboards; cross-layer root cause attribution across distributed CDN and KPI infrastructure.</p>
+      <p>Real-time anomaly detection with explainability dashboards; cross-layer root cause attribution across distributed CDN and KPI infrastructure.</p>
     </div>
 
     <div class="grant-card">
@@ -231,104 +264,76 @@
     </div>
 
     <div class="grant-card">
-      <h3>EKOP Research Scholarship – Independent Fundamental Research <span class="badge badge-scholar">University Grant</span></h3>
+      <h3>EKÖP Research Scholarship – Independent Fundamental Research <span class="badge badge-scholar">University Grant</span></h3>
       <div class="meta">Eötvös Loránd University · 2025 – 2026</div>
-      <p>Global model-agnostic explainable AI framework for anomaly detection. Resulted in the ASOI metric publication (Complex & Intelligent Systems, Springer 2025).</p>
+      <p>Global model-agnostic explainable AI framework for anomaly detection and evaluation.</p>
     </div>
   </section>
 
   <!-- PUBLICATIONS -->
   <section id="publications">
-    <h2>Publications</h2>
+    <h2>Selected Publications</h2>
     <p style="margin-bottom:1.2rem; color:var(--muted); font-size:0.9rem;">
-      Full list on <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a>.
-      Industry project details are subject to confidentiality agreements with Deutsche Telekom.
+      Full list on
+      <a href="https://scholar.google.com/citations?user=pP-ROH0AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>.
     </p>
 
     <div class="pub-entry flagship">
       <div class="year">Journal · 2025 <span class="pub-tag">Flagship</span></div>
       <div class="title">ASOI: Anomaly Separation and Overlap Index — an internal evaluation metric for unsupervised anomaly detection</div>
-      <div class="authors">Mahmud, J., Farou, Z., & Lendák, I.</div>
-      <div class="venue">Complex & Intelligent Systems, Springer</div>
+      <div class="authors">Mahmud, J., Farou, Z., &amp; Lendák, I.</div>
+      <div class="venue">Complex &amp; Intelligent Systems, Springer</div>
     </div>
 
     <div class="pub-entry">
       <div class="year">Journal · Under Review</div>
-      <div class="title">Novel global model-agnostic anomaly detection framework</div>
+      <div class="title">Glade: A Global Anomaly-Dependency Explainer via Adaptive Personalized Propagation</div>
       <div class="authors">Mahmud, J. et al.</div>
-      <div class="venue">Results in Engineering</div>
+      <div class="venue">Under review</div>
     </div>
 
     <div class="pub-entry nlp">
-      <div class="year">Conference · 2025 <span class="pub-tag" style="background:#D4E6F1;color:#1A5276;">NLP-adjacent</span></div>
+      <div class="year">Conference · 2025 <span class="pub-tag" style="background:#D4E6F1;color:#1A5276;">Logs / NLP</span></div>
       <div class="title">Temporal Harmonization of Heterogeneous Software Logs: A Unified Model for Time-Series Analysis</div>
-      <div class="authors">Abdullah, M., Hnětyňka, P., & Mahmud, J.S.</div>
-      <div class="venue">European Conference on Software Architecture (ECSA), Springer</div>
+      <div class="authors">Abdullah, M., Hnětyňka, P., &amp; Mahmud, J.S.</div>
+      <div class="venue">ECSA (Springer)</div>
     </div>
 
     <div class="pub-entry">
       <div class="year">Conference · 2025</div>
       <div class="title">A Dual-Stage Anomaly Detection Framework: Self-Organizing Maps with KNN Refinement</div>
-      <div class="authors">Jendoubi, B. & Mahmud, J.S.</div>
-      <div class="venue">IEEE SISY 2025</div>
+      <div class="authors">Jendoubi, B. &amp; Mahmud, J.S.</div>
+      <div class="venue">IEEE SISY</div>
     </div>
-
-    <div class="pub-entry">
-      <div class="year">Conference · 2025</div>
-      <div class="title">How BBR Improves the Quality of Live TV Streaming Experience</div>
-      <div class="authors">Mahmud, J.S., Jursonovics, T., & Lendák, I.</div>
-      <div class="venue">IEEE SAMI 2025</div>
-    </div>
-
-    <div class="pub-entry">
-      <div class="year">Conference · 2024</div>
-      <div class="title">Evaluating Unsupervised Anomaly Detection in Industrial Systems Using Silhouette Coefficient</div>
-      <div class="authors">Mahmud, J.S., Youssef, A., & Lendák, I.</div>
-      <div class="venue">ICRIC, Springer</div>
-    </div>
-
-    <div class="pub-entry">
-      <div class="year">Conference · 2024</div>
-      <div class="title">Enhancing One-Class Anomaly Detection Through Unsupervised Data Refinement</div>
-      <div class="authors">Mahmud, J.S. & Lendák, I.</div>
-      <div class="venue">IEEE SISY 2024</div>
-    </div>
-
-    <div class="pub-entry">
-      <div class="year">Conference · 2023</div>
-      <div class="title">A Semi-Supervised Framework for Anomaly Detection and Labeling for ICS</div>
-      <div class="authors">Mahmud, J.S., Birihanu, E., & Lendák, I.</div>
-      <div class="venue">CITIA, Springer</div>
-    </div>
-
-    <div class="pub-entry">
-      <div class="year">Conference · 2023</div>
-      <div class="title">Anomaly Detection in Power Consumption: A Multi-technique Approach</div>
-      <div class="authors">Hrimech, A. & Mahmud, J.S.</div>
-      <div class="venue">ICRIC, Springer</div>
-    </div>
-
-    <p style="margin-top:1rem; font-size:0.9rem; color:var(--muted);">
-      <strong>In preparation:</strong> Self-Explainable Transformers · Graph-Based XAI · WindowLIME · LLM-Based Anomaly Detection & Forecasting
-    </p>
   </section>
 
   <!-- CODE -->
   <section id="code">
-    <h2>Code & Demos</h2>
+    <h2>Featured Repositories</h2>
     <p style="margin-bottom:1rem; color:var(--muted); font-size:0.9rem;">
       Industry project code is confidential. These repositories contain open implementations and anonymized demos.
     </p>
     <div class="repo-grid">
-      <a class="repo-card" href="https://github.com/jiyanMahmud/asoi-metric" target="_blank">
-        <h3>📊 asoi-metric</h3>
-        <p>Internal evaluation metric for unsupervised anomaly detection. Label-free, model-agnostic. Published in Complex & Intelligent Systems 2025.</p>
-        <div class="lang"><span>Python</span> <span>MIT License</span></div>
+      <a class="repo-card" href="https://github.com/jiyanMahmud/ASOI_ASI" target="_blank" rel="noopener">
+        <h3>📊 ASOI / ASI metric</h3>
+        <p>ASOI: an internal evaluation metric for unsupervised anomaly detection · <em>Complex &amp; Intelligent Systems, Springer 2025</em>.</p>
+        <div class="lang"><span>Python</span> <span>Research</span></div>
       </a>
-      <a class="repo-card" href="https://github.com/jiyanMahmud/xai-anomaly-dashboard" target="_blank">
-        <h3>🔍 xai-anomaly-dashboard</h3>
-        <p>Real-time anomaly detection with SHAP-based user-facing explanations. Anonymized demo with synthetic data.</p>
+      <a class="repo-card" href="https://github.com/jiyanMahmud/Glade" target="_blank" rel="noopener">
+        <h3>🧠 Glade</h3>
+        <p>Global anomaly-dependency explainer via graph-based propagation (under review).</p>
+        <div class="lang"><span>Python</span> <span>XAI</span></div>
+      </a>
+      <a class="repo-card" href="https://github.com/T4-XICS/OST-SM-Project" target="_blank" rel="noopener">
+        <h3>🔍 Student XAI Dashboard</h3>
+        <p>Real-time anomaly detection dashboard with SHAP-based explanations · student group project (anonymized demo).</p>
         <div class="lang"><span>Python</span> <span>Dash / Plotly</span></div>
+      </a>
+      <!-- add a fourth card if you want balanced grid -->
+      <a class="repo-card" href="https://github.com/jiyanMahmud" target="_blank" rel="noopener">
+        <h3>💻 More on GitHub</h3>
+        <p>Additional repositories, experiments, and utilities.</p>
+        <div class="lang"><span>GitHub</span> <span>Profile</span></div>
       </a>
     </div>
   </section>
@@ -338,35 +343,32 @@
     <h2>Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-group">
-        <h3>XAI Methods</h3>
+        <h3>XAI</h3>
         <div class="skill-tags">
           <span>SHAP</span><span>LIME</span><span>WindowLIME</span>
-          <span>Self-Explainable Models</span><span>Graph Interpretability</span>
-          <span>Attention Visualization</span><span>Counterfactuals</span>
-          <span>Simulatability Studies</span>
+          <span>Self-Explainable Models</span><span>Graph Explainability</span>
+          <span>Counterfactuals</span><span>User Studies</span>
         </div>
       </div>
       <div class="skill-group">
-        <h3>ML & Deep Learning</h3>
+        <h3>Anomaly Detection</h3>
         <div class="skill-tags">
-          <span>Unsupervised Learning</span><span>GNNs</span><span>Transformers</span>
-          <span>Reinforcement Learning</span><span>KAN</span>
-          <span>Ensemble Methods</span><span>PyTorch</span><span>Scikit-learn</span>
+          <span>Unsupervised AD</span><span>Evaluation Metrics</span><span>Root Cause Analysis</span>
+          <span>Graph Propagation</span><span>Time-Series</span>
         </div>
       </div>
       <div class="skill-group">
-        <h3>NLP & Language</h3>
+        <h3>ML / DL</h3>
         <div class="skill-tags">
-          <span>Log Modeling</span><span>LLM-Based Detection</span>
-          <span>Mixture-of-Experts</span><span>Text Classification</span>
+          <span>PyTorch</span><span>Scikit-learn</span><span>Transformers</span>
+          <span>GNNs</span><span>Ensembles</span>
         </div>
       </div>
       <div class="skill-group">
-        <h3>Systems & Infrastructure</h3>
+        <h3>Systems</h3>
         <div class="skill-tags">
-          <span>Python</span><span>Docker</span><span>Kafka</span>
-          <span>Elasticsearch</span><span>Grafana</span><span>InfluxDB</span>
-          <span>Linux</span><span>Git</span>
+          <span>Docker</span><span>Kafka</span><span>InfluxDB</span>
+          <span>Elasticsearch</span><span>Grafana</span><span>Linux</span><span>Git</span>
         </div>
       </div>
     </div>
@@ -375,16 +377,23 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <p style="margin-bottom:0.5rem;">I am actively seeking postdoctoral positions in explainable AI, NLP, and human-centered AI systems.</p>
-    <ul class="info-list" style="max-width:400px;">
-      <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6802011109062801060e460d041c0d46001d">[email&#160;protected]</a></li>
-      <li><strong>Location:</strong> Budapest, Hungary (open to relocation)</li>
-      <li><strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a></li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/jiyanMahmud">github.com/jiyanMahmud</a></li>
+    <p style="margin-bottom:0.9rem;">
+      I am actively seeking postdoctoral positions in <strong>Explainable AI</strong>, <strong>NLP</strong>, and <strong>human-centered AI systems</strong>.
+    </p>
+    <ul class="info-list" style="max-width:520px;">
+      <li><strong>Email:</strong> <a href="mailto:jiyan@inf.elte.hu">jiyan@inf.elte.hu</a></li>
+      <li><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=pP-ROH0AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar profile</a></li>
+      <li><strong>Website:</strong> <a href="https://jiyanMahmud.github.io" target="_blank" rel="noopener">jiyanMahmud.github.io</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jiyan-mahmud/" target="_blank" rel="noopener">linkedin.com/in/jiyan-mahmud</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/jiyanMahmud" target="_blank" rel="noopener">github.com/jiyanMahmud</a></li>
     </ul>
   </section>
 
 </div>
 
 <footer>
-  <p>Jiyan Salim Mahmud · PhD Candidate, Eötvös Loránd University (ELT
+  <p>Jiyan Salim Mahmud · PhD Candidate, Eötvös Loránd University (ELTE) · Budapest</p>
+</footer>
+
+</body>
+</html>
